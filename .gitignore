@@ -2,6 +2,7 @@ HELP.md
 target/
 lib/
 out/
+nocommit/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

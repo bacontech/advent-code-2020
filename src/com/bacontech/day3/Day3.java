@@ -9,14 +9,17 @@ public class Day3 {
     public static void main (String[] args) {
         List<String> lines = BaconFileReader.getFileLines("src", "com", "bacontech", "day3", "day3-input.txt");
 //        right 3 - down 1
-        long answer =
+        long answerPart2 =
             day3(lines, 1, 1) *
             day3(lines, 1, 3) *
             day3(lines, 1, 5) *
             day3(lines, 1, 7) *
             day3(lines, 2, 1);
 
-        System.out.println(answer);
+        System.out.println(answerPart2);
+
+//        long answerPart1 = day3(lines, 1, 3);
+//        System.out.println(answerPart1);
     }
 
     // 286 part 1
