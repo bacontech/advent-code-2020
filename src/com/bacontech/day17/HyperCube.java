@@ -3,7 +3,7 @@ package com.bacontech.day17;
 import lombok.Data;
 
 @Data
-public class Cube {
+public class HyperCube {
     private static final Character ACTIVE = '#';
     private static final Character INACTIVE = '.';
 
@@ -11,34 +11,17 @@ public class Cube {
     private Integer row;
     private Integer col;
     private Integer zIndex;
+    private Integer wIndex;
 
-    public Cube(int row, int col, int z, Character character) {
-        this(row, col, z, character == ACTIVE);
+    public HyperCube(int row, int col, int z, int w, Character character) {
+        this(row, col, z, w, character == ACTIVE);
     }
-    public Cube(int row, int col, int z, boolean isActive) {
+    public HyperCube(int row, int col, int z, int w, boolean isActive) {
         this.row = row;
         this.col = col;
         this.zIndex = z;
+        this.wIndex = w;
         this.isActive = isActive;
-    }
-
-    // Each cube only ever considers its neighbors:
-    // any of the 26 other cubes where any of their
-    // coordinates differ by at most 1.
-    // For example, given the cube at x=1,y=2,z=3,
-    // its neighbors include the cube at x=2,y=2,z=2,
-    // the cube at x=0,y=2,z=3, and so on.
-    public boolean isNeighbor(Cube otherCube) {
-        if (Math.abs(this.row - otherCube.row) > 1) {
-            return false;
-        }
-        if (Math.abs(this.col - otherCube.col) > 1) {
-            return false;
-        }
-        if (Math.abs(this.zIndex - otherCube.zIndex) > 1) {
-            return false;
-        }
-        return true;
     }
 
     public boolean determineIfActiveNext(int numActiveNeighbors) {
