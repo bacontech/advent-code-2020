@@ -26,4 +26,9 @@ public class Answer {
         System.out.println(answer);
         System.out.println("====");
     }
+
+    public List<String> parse(String filename) {
+        List<String> lines = parseLines(filename);
+        return lines;
+    }
 }
