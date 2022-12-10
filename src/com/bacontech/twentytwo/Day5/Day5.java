@@ -11,6 +11,10 @@ import java.util.regex.Pattern;
 import java.util.stream.IntStream;
 
 public class Day5 extends Answer {
+
+    private static String REGEX = "^move (\\d+) from (\\d+) to (\\d+)$";
+    private static Pattern PATTERN = Pattern.compile(REGEX);
+
     public static void main(String[] args) {
 
         String input = Day5.SAMPLE;
@@ -29,8 +33,6 @@ public class Day5 extends Answer {
         return answer.processAnswerPart1(lines);
     }
 
-    private static String REGEX = "^move (\\d+) from (\\d+) to (\\d+)$";
-    private static Pattern PATTERN = Pattern.compile(REGEX);
 
 
     public String processAnswerPart1(List<String> lines) {
