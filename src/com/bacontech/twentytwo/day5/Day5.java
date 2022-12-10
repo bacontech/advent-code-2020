@@ -1,4 +1,4 @@
-package com.bacontech.twentytwo.Day5;
+package com.bacontech.twentytwo.day5;
 
 import com.bacontech.helpers.Answer;
 import org.junit.platform.commons.util.StringUtils;
