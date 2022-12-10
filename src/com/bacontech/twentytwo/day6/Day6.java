@@ -2,15 +2,13 @@ package com.bacontech.twentytwo.day6;
 
 import com.bacontech.helpers.Answer;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 import java.util.regex.Matcher;
 
 public class Day6 extends Answer {
     public static void main(String[] args) {
 
-        String input = Day6.SAMPLE;
+        String input = Day6.FULL_PROMPT;
 
         Object part1 = solvePart1(input);
         printSolution("part1", part1);
@@ -27,13 +25,40 @@ public class Day6 extends Answer {
     }
 
 
-    public String processAnswerPart1(List<String> lines) {
+    public Integer processAnswerPart1(List<String> lines) {
 
         // Start of marker - 4 sequential characters that are different.
 
         // Return the number of characters from the start of the string
         // to the start of the marker
-        return null;
+        return findMessage(lines.get(0), 4);
+    }
+    public Integer findMessage(String line, int limit) {
+        List<Character> last4Characters = new LinkedList<>();
+        for (int i = 0; i < line.length(); i++) {
+            Character character = line.charAt(i);
+//            System.out.println(character);
+            if (last4Characters.size() < (limit-1)) {
+                last4Characters.add(character);
+            } else {
+                last4Characters.add(character);
+//                System.out.println(last4Characters);
+                if (!hasDuplicate(last4Characters)) {
+                    // Not in the previous 3
+                    return i + 1;
+                }
+                last4Characters.remove(0);
+//                System.out.println(last4Characters);
+            }
+
+//            System.out.println("----");
+        }
+        return -1;
+    }
+
+    private boolean hasDuplicate(List<Character> last4Characters) {
+        Set<Character> characters = new HashSet<>(last4Characters);
+        return characters.size() < last4Characters.size();
     }
 
     public static Object solvePart2(String filename) {
@@ -43,8 +68,8 @@ public class Day6 extends Answer {
     }
 
 
-    public String processAnswerPart2(List<String> lines) {
+    public Integer processAnswerPart2(List<String> lines) {
 
-        return null;
+        return findMessage(lines.get(0), 14);
     }
 }
