@@ -113,7 +113,6 @@ public class Day1 extends Answer {
                 }
             }
             if (lastNumber == null) {
-//            System.out.println(trimmedBack);
                 for (String k : CONVERTER.keySet()) {
                     if (trimmedBack.endsWith(k)) {
                         lastNumber = CONVERTER.get(k);
