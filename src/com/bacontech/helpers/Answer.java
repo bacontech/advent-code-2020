@@ -31,4 +31,36 @@ public class Answer {
         List<String> lines = parseLines(filename);
         return lines;
     }
+
+    public Object solvePart1Custom(String filename) {
+        return doPart1(parseLines(filename));
+    }
+
+    public Object solvePart1Sample() {
+        return doPart1(parseLines(SAMPLE));
+    }
+
+    public Object solvePart1Real() {
+        return doPart1(parseLines(FULL_PROMPT));
+    }
+
+    public Object solvePart2Sample() {
+        return doPart2(parseLines(SAMPLE));
+    }
+
+    public Object solvePart2Real() {
+        return doPart2(parseLines(FULL_PROMPT));
+    }
+
+    public Object solvePart2Custom(String filename) {
+        return doPart2(parseLines(filename));
+    }
+
+    public Object doPart1(List<String> lines) {
+        return null;
+    }
+
+    public Object doPart2(List<String> lines) {
+        return null;
+    }
 }
